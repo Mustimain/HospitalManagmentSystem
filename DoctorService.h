@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-#include <list>
+#include <vector>
 #include "Doctor.h"
 
 using namespace std;
@@ -10,5 +10,5 @@ public:
     void AddDoctor(Doctor doctor);
     void DeleteDoctor(int doctorId);
     Doctor GetDoctorById(int doctorId);
-    list<Doctor> GetAllDoctor();
+    vector<Doctor> GetAllDoctor();
 };

@@ -11,14 +11,16 @@ private:
     string surname;
     string phoneNumber;
     string adress;
+    string department;
 
 public:
 
-    Employee(int id, string password, string username, string name, string surname, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
+    Employee(int id, string password, string username, string name, string surname,string department, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
         this->name = name;
         this->surname = surname;
         this->phoneNumber = phoneNumber;
         this->adress = adress;
+        this->department = department;
     }
     Employee() :User() {
 
@@ -54,6 +56,14 @@ public:
 
     void setAdress(string adress) {
         this->adress = adress;
+    }
+
+    string getDepartment() {
+        return this->adress;
+    }
+
+    void setDepartment(string department) {
+        this->department = department;
     }
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include "Patient.h"
-#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -10,6 +10,6 @@ public:
     void AddPatient(Patient patient);
     void DeletePatient(int patientId);
     Patient GetPatientById(int patientId);
-    list<Patient> GetAllPatient();
+    vector<Patient> GetAllPatient();
 
 };

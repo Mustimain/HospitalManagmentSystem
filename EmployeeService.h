@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 #include "Employee.h"
-#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -11,5 +11,5 @@ public:
     void AddEmployee(Employee employee);
     void DeleteEmployee(int employeeId);
     Employee GetEmployeeById(int employeeId);
-    list<Employee> GetAllEmployee();
+    vector<Employee> GetAllEmployee();
 };

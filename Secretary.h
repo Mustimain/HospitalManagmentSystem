@@ -10,15 +10,21 @@ class Secretary : public User {
 private:
     string name;
     string surname;
+    string phoneNumber;
+    string adress;
 
 public:
-    Secretary(int id, string username, string password, string name, string surname, int roleId) : User(id, username, password, roleId) {
+
+    Secretary(int id, string username, string password, string name, string surname, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
         this->name = name;
         this->surname = surname;
+        this->phoneNumber = phoneNumber;
+        this->adress = adress;
+    }
+    Secretary() :User() {
+
     }
 
-    Secretary() :User() {
-    }
 
 
     string getName() {
@@ -36,5 +42,22 @@ public:
     void setSurname(string surname) {
         this->surname = surname;
     }
+
+    string getPhoneNumber() {
+        return this->phoneNumber;
+    }
+
+    void setPhoneNumber(string phoneNumber) {
+        this->phoneNumber = phoneNumber;
+    }
+
+    string getAdress() {
+        return this->adress;
+    }
+
+    void setAdress(string adress) {
+        this->adress = adress;
+    }
+
 
 };

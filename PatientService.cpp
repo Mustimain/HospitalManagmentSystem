@@ -13,6 +13,6 @@ Patient PatientService::GetPatientById(int patientId) {
     return *new Patient();
 };
 
-list<Patient> PatientService::GetAllPatient() {
-    return *new list<Patient>();
+vector<Patient> PatientService::GetAllPatient() {
+    return *new vector<Patient>();
 };

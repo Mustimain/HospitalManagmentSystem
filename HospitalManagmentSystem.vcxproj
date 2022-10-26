@@ -133,7 +133,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DbContext.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="DoctorService.cpp" />
     <ClCompile Include="Employee.cpp" />
@@ -148,7 +147,6 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DbContext.h" />
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="DoctorService.h" />
     <ClInclude Include="Employee.h" />

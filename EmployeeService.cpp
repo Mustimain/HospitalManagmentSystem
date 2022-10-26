@@ -12,6 +12,6 @@ Employee EmployeeService::GetEmployeeById(int employeeId) {
     return *new Employee();
 };
 
-list<Employee> EmployeeService::GetAllEmployee() {
-    return *new list<Employee>();
+vector<Employee> EmployeeService::GetAllEmployee() {
+    return *new vector<Employee>();
 };

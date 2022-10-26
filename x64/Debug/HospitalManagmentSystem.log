@@ -1,2 +1,11 @@
 ﻿  HospitalManagmentSystem.cpp
+C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(130,21): warning C4102: 'againDoctorInput': unreferenced label
+C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(18,19): warning C4101: 'secretaryService': unreferenced local variable
+C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(16,15): warning C4101: 'nurseService': unreferenced local variable
+C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(17,17): warning C4101: 'patientService': unreferenced local variable
+C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(15,18): warning C4101: 'employeeService': unreferenced local variable
+C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(62,9): warning C4101: 'id': unreferenced local variable
+  Secretary.cpp
+  SecretaryService.cpp
+  Generating Code...
   HospitalManagmentSystem.vcxproj -> C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\x64\Debug\HospitalManagmentSystem.exe

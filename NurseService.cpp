@@ -14,7 +14,7 @@ Nurse NurseService::GetNurseById(int nurseId) {
     return *new Nurse();
 };
 
-list<Nurse> NurseService::GetAllNurse() {
-    return *new list<Nurse>();
+vector<Nurse> NurseService::GetAllNurse() {
+    return *new vector<Nurse>();
 
 };

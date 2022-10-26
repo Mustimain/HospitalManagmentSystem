@@ -48,9 +48,6 @@
     <ClCompile Include="User.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="DbContext.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
     <ClCompile Include="DoctorService.cpp">
       <Filter>Source Files\Services</Filter>
     </ClCompile>
@@ -85,9 +82,6 @@
     </ClInclude>
     <ClInclude Include="User.h">
       <Filter>Header Files\IEntities</Filter>
-    </ClInclude>
-    <ClInclude Include="DbContext.h">
-      <Filter>Header Files\IServices</Filter>
     </ClInclude>
     <ClInclude Include="DoctorService.h">
       <Filter>Header Files\IServices</Filter>

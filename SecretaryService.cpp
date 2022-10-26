@@ -14,7 +14,7 @@ Secretary SecretaryService::GetSecretaryById(int secretaryId) {
     return *new Secretary();
 };
 
-list<Secretary> SecretaryService::GetAllSecretary() {
-    return *new list<Secretary>();
+vector<Secretary> SecretaryService::GetAllSecretary() {
+    return *new vector<Secretary>();
 
 };
