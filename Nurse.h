@@ -14,7 +14,7 @@ private:
 
 public:
 
-    Nurse(int id, string username, string password, string name, string surname, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
+    Nurse(int id, string username, string password, string name, string surname, string phoneNumber, string adress) : User(id, username, password) {
         this->name = name;
         this->surname = surname;
         this->phoneNumber = phoneNumber;

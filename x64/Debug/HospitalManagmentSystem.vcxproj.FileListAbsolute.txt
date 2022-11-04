@@ -1,1 +1,2 @@
 C:\Users\musti\OneDrive\Masaüstü\Project\HospitalManagmentSystem\x64\Debug\HospitalManagmentSystem.exe
+D:\Project\HospitalManagmentSystem\x64\Debug\HospitalManagmentSystem.exe

@@ -9,14 +9,12 @@ private:
     int id;
     string username;
     string password;
-    int roleId;
 public:
 
-    User(int id, string username, string password, int roleId) {
+    User(int id, string username, string password) {
         this->id = id;
         this->username = username;
         this->password = password;
-        this->roleId = roleId;
 
     }
     User() {
@@ -47,13 +45,6 @@ public:
         this->password = password;
     }
 
-    int getRoleId() {
-        return this->roleId;
-    }
-
-    void setRoleId(int roleId) {
-        this->roleId = roleId;
-    }
 
 
 };

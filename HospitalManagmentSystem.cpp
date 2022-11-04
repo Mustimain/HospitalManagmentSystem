@@ -34,7 +34,7 @@ again:
 	if (choose == "1")
 	{
 		system("CLS");
-		adminStart:
+	adminStart:
 		cout << " 1-) Doktor islemleri" << endl;
 		cout << " 2-) Sekreter islemleri" << endl;
 		cout << " 3-) Hemsire Girisi" << endl;
@@ -47,7 +47,7 @@ again:
 		if (choose == "1")
 		{
 			system("CLS");
-			doctorStart:
+		doctorStart:
 			cout << " 1-) Doktor Ekle" << endl;
 			cout << " 2-) Doktor Sil" << endl;
 			cout << " 3-) Doktor Arama" << endl;
@@ -95,9 +95,9 @@ again:
 						bigNumber = datas[i].getId();
 					}
 				}
-				doctorService.AddDoctor(*new Doctor(bigNumber + 1, username, password, name, surname, profession, phoneNumber, adress, 2));
-			
-				
+				doctorService.AddDoctor(*new Doctor(bigNumber + 1, username, password, name, surname, profession, phoneNumber, adress));
+
+
 				system("CLS");
 				goto doctorStart;
 			}
@@ -127,13 +127,14 @@ again:
 			}
 			else if (choose == "3")
 			{
-				againDoctorInput:
+			againDoctorInput:
 				system("CLS");
 				string name;
 				cout << "Aramak Istediginiz kisinin isim veya soyisim bilgisini giriniz: ";
 				cin >> name;
-
-				auto doctorList = doctorService.GetAllDoctor();
+				vector<Doctor> doctorList;
+				doctorList.clear();
+				doctorList = doctorService.GetAllDoctor();
 				for (int i = 0; i < doctorList.size(); i++)
 				{
 					if (doctorList[i].getName().find(name) != string::npos || doctorList[i].getSurname().find(name) != string::npos)
@@ -179,13 +180,14 @@ again:
 				cout << "Cikmak icin 0'i tuslayiniz: ";
 				cin >> choose;
 
+
 				if (choose == "0")
 				{
 					system("CLS");
 					goto doctorStart;
 				}
-			
-				
+
+
 			}
 			else if (choose == "5")
 			{

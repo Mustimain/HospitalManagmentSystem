@@ -15,7 +15,7 @@ private:
 
 public:
 
-    Secretary(int id, string username, string password, string name, string surname, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
+    Secretary(int id, string username, string password, string name, string surname, string phoneNumber, string adress) : User(id, username, password) {
         this->name = name;
         this->surname = surname;
         this->phoneNumber = phoneNumber;

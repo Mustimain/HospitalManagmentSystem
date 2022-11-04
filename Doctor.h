@@ -15,7 +15,7 @@ private:
 
 public:
 
-    Doctor(int id, string username, string password, string name, string surname, string profession, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
+    Doctor(int id, string username, string password, string name, string surname, string profession, string phoneNumber, string adress) : User(id, username, password) {
 
         this->name = name;
         this->surname = surname;

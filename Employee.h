@@ -15,7 +15,7 @@ private:
 
 public:
 
-    Employee(int id, string password, string username, string name, string surname,string department, string phoneNumber, string adress, int roleId) : User(id, username, password, roleId) {
+    Employee(int id, string password, string username, string name, string surname,string department, string phoneNumber, string adress) : User(id, username, password) {
         this->name = name;
         this->surname = surname;
         this->phoneNumber = phoneNumber;
