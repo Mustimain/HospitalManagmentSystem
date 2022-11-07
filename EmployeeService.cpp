@@ -3,17 +3,16 @@
 #include <sstream>
 
 
-MYSQL* conn;
-MYSQL_RES* result;
-MYSQL_ROW row;
-vector<Employee> nurseList;
+extern MYSQL* conn;
+extern MYSQL_RES* result;
+extern MYSQL_ROW row;
+vector<Employee> employeeList;
 
 void EmployeeService::AddEmployee(Employee employee) {
 
 	conn = mysql_init(0);
 	stringstream a;
-	a << "INSERT INTO employees (id,username,password,name,surname,phonenumber,adress,department) VALUES (" <<
-		employee.getId() << ",'" <<
+	a << "INSERT INTO employees (username,password,name,surname,phonenumber,adress,department) VALUES (" <<
 		employee.getUsername() << "','" <<
 		employee.getPassword() << "','" <<
 		employee.getName() << "','" <<
@@ -78,7 +77,7 @@ Employee EmployeeService::GetEmployeeById(int employeeId) {
 
 	conn = mysql_init(0);
 	stringstream a;
-	a << "select * from doctors where id = " << employeeId;
+	a << "select * from employees where id = " << employeeId;
 
 	string b = a.str();
 	const char* query = b.c_str();
@@ -105,5 +104,39 @@ Employee EmployeeService::GetEmployeeById(int employeeId) {
 };
 
 vector<Employee> EmployeeService::GetAllEmployee() {
+
+	employeeList.clear();
+	conn = mysql_init(0);
+	stringstream a;
+	a << "select * from doctors";
+
+	string b = a.str();
+	const char* query = b.c_str();
+
+
+	if (conn = mysql_real_connect(conn, "localhost", "root", "musti123", "hospitalmanagmentdb", 3306, NULL, 0))
+	{
+		mysql_query(conn, query);
+		result = mysql_store_result(conn);
+		int count = mysql_num_fields(result);
+
+		while (row = mysql_fetch_row(result))
+		{
+			for (int i = 0; i < count; i += 8)
+			{
+				int a = (int)row[i][i] - 48;
+				Employee employee(a, (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
+					row[i + 6], (string)row[i + 7]);
+				employeeList.push_back(employee);
+
+			}
+		}
+		return employeeList;
+	}
+	else
+	{
+		cout << "sql baglanmadi" << endl;
+
+	}
     return *new vector<Employee>();
 };

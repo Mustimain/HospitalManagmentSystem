@@ -15,51 +15,17 @@ private:
 
 public:
 
-    Employee(int id, string password, string username, string name, string surname,string department, string phoneNumber, string adress) : User(id, username, password) {
-        this->name = name;
-        this->surname = surname;
-        this->phoneNumber = phoneNumber;
-        this->adress = adress;
+    Employee(int id, string password, string username, string name, string surname,string department, string phoneNumber, string adress) : User(id, username, password,name,surname,phoneNumber,adress) {
+        
         this->department = department;
     }
     Employee() :User() {
 
     }
 
-    string getName() {
-        return this->name;
-    }
-
-    void setName(string name) {
-        this->name = name;
-    }
-
-    string getSurname() {
-        return this->surname;
-    }
-
-    void setSurname(string surname) {
-        this->surname = surname;
-    }
-
-    string getPhoneNumber() {
-        return this->phoneNumber;
-    }
-
-    void setPhoneNumber(string phoneNumber) {
-        this->phoneNumber = phoneNumber;
-    }
-
-    string getAdress() {
-        return this->adress;
-    }
-
-    void setAdress(string adress) {
-        this->adress = adress;
-    }
 
     string getDepartment() {
-        return this->adress;
+        return this->department;
     }
 
     void setDepartment(string department) {

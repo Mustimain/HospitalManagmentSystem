@@ -7,7 +7,6 @@
 using namespace std;
 
 
-DbContext dbContext;
 MYSQL* conn;
 MYSQL_RES* result;
 MYSQL_ROW row;

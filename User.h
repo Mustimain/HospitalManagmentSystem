@@ -9,12 +9,20 @@ private:
     int id;
     string username;
     string password;
+    string name;
+    string surname;
+    string phoneNumber;
+    string adress;
 public:
 
-    User(int id, string username, string password) {
+    User(int id, string username, string password, string name, string surname, string phoneNumber, string adress) {
         this->id = id;
         this->username = username;
         this->password = password;
+        this->name = name;
+        this->surname = surname;
+        this->phoneNumber = phoneNumber;
+        this->adress = adress;
 
     }
     User() {
@@ -45,6 +53,37 @@ public:
         this->password = password;
     }
 
+    string getName() {
+        return this->name;
+    }
+
+    void setName(string name) {
+        this->name = name;
+    }
+
+    string getSurname() {
+        return this->surname;
+    }
+
+    void setSurname(string surname) {
+        this->surname = surname;
+    }
+
+    string getPhoneNumber() {
+        return this->phoneNumber;
+    }
+
+    void setPhoneNumber(string phoneNumber) {
+        this->phoneNumber = phoneNumber;
+    }
+
+    string getAdress() {
+        return this->adress;
+    }
+
+    void setAdress(string adress) {
+        this->adress = adress;
+    }
 
 
 };
