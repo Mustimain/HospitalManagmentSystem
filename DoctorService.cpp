@@ -1,15 +1,14 @@
 #include "DoctorService.h"
 #include "Doctor.h"
 #include <iostream>
-#include "DbContext.h"
 #include <mysql.h>
 #include <sstream>
 using namespace std;
 
 
-MYSQL* conn;
-MYSQL_RES* result;
-MYSQL_ROW row;
+extern MYSQL* conn;
+extern MYSQL_RES* result;
+extern MYSQL_ROW row;
 vector<Doctor> doctorList;
 
 void DoctorService::AddDoctor(Doctor doctor) {
@@ -26,9 +25,7 @@ void DoctorService::AddDoctor(Doctor doctor) {
 		doctor.getProfession() << "','" <<
 		doctor.getPhoneNumber() << "','" <<
 		doctor.getAdress() << "')";
-
 	string b = a.str();
-
 
 	if (conn = mysql_real_connect(conn, "localhost", "root", "musti123", "hospitalmanagmentdb", 3306, NULL, 0))
 	{

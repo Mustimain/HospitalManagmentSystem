@@ -12,7 +12,8 @@ void EmployeeService::AddEmployee(Employee employee) {
 
 	conn = mysql_init(0);
 	stringstream a;
-	a << "INSERT INTO employees (username,password,name,surname,phonenumber,adress,department) VALUES (" <<
+	a << "INSERT INTO employeess (id,username,password,name,surname,phonenumber,adress,department) VALUES (" <<
+		employee.getId() << ",'" <<
 		employee.getUsername() << "','" <<
 		employee.getPassword() << "','" <<
 		employee.getName() << "','" <<
@@ -20,14 +21,11 @@ void EmployeeService::AddEmployee(Employee employee) {
 		employee.getPhoneNumber() << "','" <<
 		employee.getAdress() << "','" <<
 		employee.getDepartment() << "')";
-
 	string b = a.str();
-
 
 	if (conn = mysql_real_connect(conn, "localhost", "root", "musti123", "hospitalmanagmentdb", 3306, NULL, 0))
 	{
-		cout << "sql baglandi" << endl;
-		const char* query = b.c_str();
+		const char* query =b.c_str();
 		if (!(mysql_query(conn, query)))
 		{
 			cout << "kayit tamam";
@@ -48,7 +46,7 @@ void EmployeeService::DeleteEmployee(int employeeId) {
 
 	conn = mysql_init(0);
 	stringstream a;
-	a << "DELETE from employees where id = " << employeeId;
+	a << "DELETE from employeess where id = " << employeeId;
 	string b = a.str();
 	const char* query = b.c_str();
 
@@ -77,7 +75,7 @@ Employee EmployeeService::GetEmployeeById(int employeeId) {
 
 	conn = mysql_init(0);
 	stringstream a;
-	a << "select * from employees where id = " << employeeId;
+	a << "select * from employeess where id = " << employeeId;
 
 	string b = a.str();
 	const char* query = b.c_str();
@@ -108,7 +106,7 @@ vector<Employee> EmployeeService::GetAllEmployee() {
 	employeeList.clear();
 	conn = mysql_init(0);
 	stringstream a;
-	a << "select * from doctors";
+	a << "select * from employeess";
 
 	string b = a.str();
 	const char* query = b.c_str();
