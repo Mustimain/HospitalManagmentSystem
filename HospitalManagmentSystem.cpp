@@ -6,7 +6,10 @@
 #include "PatientService.h"
 #include "SecretaryService.h"
 #include <mysql.h>
+#include <ctime>
 #include <vector>
+#include "Appointment.h"
+#include "AppointmentService.h"
 using namespace std;
 
 
@@ -16,14 +19,20 @@ MYSQL_ROW row;
 
 int main()
 {
-	conn = mysql_init(0);
+	// sekreter hasta kaydı
+	// randevu olusturma
+	// hasta randevu görme
 
+	setlocale(LC_ALL, "Turkish");
+	conn = mysql_init(0);
 
 	DoctorService doctorService;
 	EmployeeService employeeService;
 	NurseService nurseService;
 	PatientService patientService;
 	SecretaryService secretaryService;
+	AppointmentService appointmentService;
+
 	string choose;
 
 again:
@@ -87,11 +96,13 @@ again:
 				cout << "Soyisim: ";
 				cin >> surname;
 				cout << "Uzmanlik Alani: ";
-				cin >> profession;
+				cin.ignore();
+				getline(cin, profession);
 				cout << "Telefon Numarasi: ";
 				cin >> phoneNumber;
 				cout << "Adress: ";
-				cin >> adress;
+				cin.ignore();
+				getline(cin, adress);
 				cout << "Kullanici adi: ";
 				cin >> username;
 				cout << "Sifre: ";
@@ -255,7 +266,8 @@ again:
 				cout << "Telefon Numarasi: ";
 				cin >> phoneNumber;
 				cout << "Adress: ";
-				cin >> adress;
+				cin.ignore();
+				getline(cin, adress);
 				cout << "Kullanici adi: ";
 				cin >> username;
 				cout << "Sifre: ";
@@ -415,7 +427,8 @@ again:
 				cout << "Telefon Numarasi: ";
 				cin >> phoneNumber;
 				cout << "Adress: ";
-				cin >> adress;
+				cin.ignore();
+				getline(cin, adress);
 				cout << "Kullanici adi: ";
 				cin >> username;
 				cout << "Sifre: ";
@@ -580,7 +593,8 @@ again:
 				cout << "Telefon Numarasi: ";
 				cin >> phoneNumber;
 				cout << "Adress: ";
-				cin >> adress;
+				cin.ignore();
+				getline(cin, adress);
 				cout << "Tc No: ";
 				cin >> tcNo;
 				cout << "Kan Grubu: ";
@@ -754,7 +768,8 @@ again:
 				cout << "Telefon Numarasi: ";
 				cin >> phoneNumber;
 				cout << "Adress: ";
-				cin >> adress;
+				cin.ignore();
+				getline(cin, adress);
 				cout << "Kullanici adi: ";
 				cin >> username;
 				cout << "Sifre: ";
@@ -773,7 +788,7 @@ again:
 						bigNumber = datas[i].getId();
 					}
 				}
-				employeeService.AddEmployee(*new Employee(bigNumber + 1, username, password, name, surname, department,phoneNumber, adress));
+				employeeService.AddEmployee(*new Employee(bigNumber + 1, username, password, name, surname, department, phoneNumber, adress));
 
 
 				system("CLS");
@@ -903,9 +918,180 @@ again:
 	}
 
 
-
+	// SEKRETER RANDEVU İSLEMLERİ
 	else if (choose == "2")
 	{
+
+
+	secretaryMenu:
+		system("CLS");
+
+		cout << "1-) Hasta Kayit" << endl;
+		cout << "2-) Randevu Olustur" << endl;
+		cout << "3-) Tum Randevular" << endl;
+		cout << "4-) Cikis" << endl;
+
+
+		cin >> choose;
+
+		if (choose == "1")
+		{
+
+			int id;
+			string tcNo;
+			string bloodGroup;
+			string name;
+			string surname;
+			string phoneNumber;
+			string adress;
+			string gender;
+			string birthDate;
+
+			cout << "Isim: ";
+			cin >> name;
+			cout << "Soyisim: ";
+			cin >> surname;
+			cout << "Telefon Numarasi: ";
+			cin >> phoneNumber;
+			cout << "Adress: ";
+			cin.ignore();
+			getline(cin, adress);
+			cout << "Tc No: ";
+			cin >> tcNo;
+			cout << "Kan Grubu: ";
+			cin >> bloodGroup;
+			cout << "Cinsiyet: ";
+			cin >> gender;
+			cout << "Dogum Tarihi: ";
+			cin >> birthDate;
+
+			int bigNumber = 0;
+
+			auto patientSize = patientService.GetAllPatient().size();
+			auto datas = patientService.GetAllPatient();
+			for (int i = 0; i < patientSize; i++)
+			{
+				if (datas[i].getId() > bigNumber)
+				{
+					bigNumber = datas[i].getId();
+				}
+			}
+			patientService.AddPatient(*new Patient(bigNumber + 1, tcNo, name, surname, adress, phoneNumber, bloodGroup, gender, birthDate));
+
+
+			system("CLS");
+			goto secretaryMenu;
+		}
+		else if (choose == "2")
+		{
+
+			int doctorId;
+			int patientId;
+			string day;
+			string month;
+			string year;
+			string hour;
+			system("CLS");
+			auto doctorList = doctorService.GetAllDoctor();
+			for (int i = 0; i < doctorList.size(); i++)
+			{
+
+				cout << "Id: " << doctorList[i].getId() << endl;
+				cout << "Ad Soyad: " << doctorList[i].getName() << "  " << doctorList[i].getSurname() << endl;
+				cout << "Uzmanlik Alani: " << doctorList[i].getProfession() << endl;
+				cout << endl;
+
+			}
+
+			cout << "Doktor Seciniz: ";
+			cin >> doctorId;
+			system("CLS");
+
+			auto patientList = patientService.GetAllPatient();
+			for (int i = 0; i < patientList.size(); i++)
+			{
+
+				cout << "Id: " << patientList[i].getId() << endl;
+				cout << "Ad Soyad: " << patientList[i].getName() << "  " << patientList[i].getSurname() << endl;
+				cout << endl;
+
+			}
+
+			cout << "Hasta Seciniz: ";
+			cin >> patientId;
+			cout << "Gun giriniz: ";
+			cin >> day;
+			cout << "Ay giriniz: ";
+			cin >> month;
+			cout << "Yil giriniz: ";
+			cin >> year;
+			cout << "Saat giriniz: ";
+			cin >> hour;
+
+
+			string date = day + "/" + month + "/" + year + " " + hour;
+			int bigNumber = 0;
+
+			auto appointmentSize = appointmentService.GetAllAppointment().size();
+			auto datas = appointmentService.GetAllAppointment();
+			for (int i = 0; i < appointmentSize; i++)
+			{
+				if (datas[i].getId() > bigNumber)
+				{
+					bigNumber = datas[i].getId();
+				}
+			}
+
+			Appointment appointment(bigNumber + 1, doctorId, patientId, date, false);
+
+			appointmentService.AddAppointment(appointment);
+
+			goto secretaryMenu;
+
+
+		}
+		else if (choose == "3")
+		{
+			cout << "Tum Randevular" << endl << endl;
+			auto allData = appointmentService.GetAllAppointment();
+
+			for (int i = 0; i < allData.size(); i++)
+			{
+				auto doctorDetail = doctorService.GetDoctorById(allData[i].getDoctorId());
+				auto patientDetail = patientService.GetPatientById(allData[i].getPatientId());
+				cout << "Randevu id: " << allData[i].getId() << endl;
+				cout << "Doktor Ad Soyad: " << doctorDetail.getName() << "  " << doctorDetail.getSurname() << endl;
+				cout << "Uzmanlik Alani: " << doctorDetail.getProfession() << endl;
+				cout << "Hasta Ad Soyad: " << patientDetail.getName() << "  " << patientDetail.getSurname() << endl;
+				cout << "Randevu Tarihi: " << allData[i].getDate() << endl << endl;
+
+			}
+			cout << "Cikmak icin 0 Tuslayiniz:" << endl;
+			cin >> choose;
+			if (choose == "0")
+			{
+				goto secretaryMenu;
+			}
+			else
+			{
+				goto secretaryMenu;
+
+			}
+
+		}
+		else if (choose == "4")
+		{
+			system("CLS");
+			goto again;
+		}
+		else
+		{
+			cout << "Lutfen bilgileri dogru giriniz..." << endl;
+			system("CLS");
+			goto again;
+
+		}
+
 
 
 	}

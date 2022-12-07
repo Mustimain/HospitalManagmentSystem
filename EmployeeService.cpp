@@ -88,7 +88,7 @@ Employee EmployeeService::GetEmployeeById(int employeeId) {
 		int count = mysql_num_fields(result);
 		while (row = mysql_fetch_row(result))
 		{
-			return Employee((int)row[0], (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
+			return Employee(stoi(row[0]), (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
 				row[6], (string)row[7]);
 		}
 	}
@@ -122,8 +122,7 @@ vector<Employee> EmployeeService::GetAllEmployee() {
 		{
 			for (int i = 0; i < count; i += 8)
 			{
-				int a = (int)row[i][i] - 48;
-				Employee employee(a, (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
+				Employee employee(stoi(row[i]), (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
 					row[i + 6], (string)row[i + 7]);
 				employeeList.push_back(employee);
 

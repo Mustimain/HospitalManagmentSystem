@@ -94,7 +94,7 @@ Doctor DoctorService::GetDoctorById(int doctorId) {
 		int count = mysql_num_fields(result);
 		while (row = mysql_fetch_row(result))
 		{
-			return Doctor((int)row[0], (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
+			return Doctor(stoi(row[0]), (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
 				row[6], (string)row[7]);
 		}
 	}
@@ -127,8 +127,7 @@ vector<Doctor> DoctorService::GetAllDoctor() {
 		{
 			for (int i = 0; i < count; i+=8)
 			{
-				int a = (int)row[i][i]-48;
-				Doctor doctor(a, (string)row[i+1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
+				Doctor doctor(stoi(row[i]), (string)row[i+1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
 					row[i + 6], (string)row[i + 7]);
 				doctorList.push_back(doctor);
 				

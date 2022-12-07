@@ -30,7 +30,6 @@ void PatientService::AddPatient(Patient patient) {
 
 	if (conn = mysql_real_connect(conn, "localhost", "root", "musti123", "hospitalmanagmentdb", 3306, NULL, 0))
 	{
-		cout << "sql baglandi" << endl;
 		const char* query = b.c_str();
 		if (!(mysql_query(conn, query)))
 		{
@@ -93,7 +92,7 @@ Patient PatientService::GetPatientById(int patientId) {
 		int count = mysql_num_fields(result);
 		while (row = mysql_fetch_row(result))
 		{
-			return Patient((int)row[0], (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
+			return Patient(stoi(row[0]), (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
 				row[6], (string)row[7], (string)row[8]);
 		}
 	}
@@ -126,8 +125,7 @@ vector<Patient> PatientService::GetAllPatient() {
 		{
 			for (int i = 0; i < count; i += 9)
 			{
-				int a = (int)row[i][i] - 48;
-				Patient patient(a, (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
+				Patient patient(stoi(row[i]), (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
 					row[i + 6], (string)row[i + 7], (string)row[i + 8]);
 				patientList.push_back(patient);
 

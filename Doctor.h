@@ -7,11 +7,9 @@ using namespace std;
 
 class Doctor : public User {
 private:
-    string name;
-    string surname;
+
     string profession;
-    string phoneNumber;
-    string adress;
+
 
 public:
 

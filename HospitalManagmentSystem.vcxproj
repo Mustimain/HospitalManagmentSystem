@@ -102,7 +102,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Program Files\MySQL\Connector C++ 8.0\include;C:\Program Files\MySQL\MySQL Server 8.0\include</AdditionalIncludeDirectories>
     </ClCompile>
@@ -133,6 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Appointment.cpp" />
+    <ClCompile Include="AppointmentService.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="DoctorService.cpp" />
     <ClCompile Include="Employee.cpp" />
@@ -147,6 +149,8 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Appointment.h" />
+    <ClInclude Include="AppointmentService.h" />
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="DoctorService.h" />
     <ClInclude Include="Employee.h" />

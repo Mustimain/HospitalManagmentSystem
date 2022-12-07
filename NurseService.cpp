@@ -87,7 +87,7 @@ Nurse NurseService::GetNurseById(int nurseId) {
 		int count = mysql_num_fields(result);
 		while (row = mysql_fetch_row(result))
 		{
-			return Nurse((int)row[0], (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
+			return Nurse(stoi(row[0]), (string)row[1], (string)row[2], (string)row[3], (string)row[4], (string)row[5], (string)
 				row[6]);
 		}
 	}
@@ -120,8 +120,7 @@ vector<Nurse> NurseService::GetAllNurse() {
 		{
 			for (int i = 0; i < count; i += 7)
 			{
-				int a = (int)row[i][i] - 48;
-				Nurse nurse(a, (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
+				Nurse nurse(stoi(row[i]), (string)row[i + 1], (string)row[i + 2], (string)row[i + 3], (string)row[i + 4], (string)row[i + 5], (string)
 					row[i + 6]);
 				nurseList.push_back(nurse);
 
