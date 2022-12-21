@@ -139,6 +139,8 @@
     <ClCompile Include="DoctorService.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="EmployeeService.cpp" />
+    <ClCompile Include="Examination.cpp" />
+    <ClCompile Include="ExaminationService.cpp" />
     <ClCompile Include="HospitalManagmentSystem.cpp" />
     <ClCompile Include="Nurse.cpp" />
     <ClCompile Include="NurseService.cpp" />
@@ -155,6 +157,8 @@
     <ClInclude Include="DoctorService.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="EmployeeService.h" />
+    <ClInclude Include="Examination.h" />
+    <ClInclude Include="ExaminationService.h" />
     <ClInclude Include="Nurse.h" />
     <ClInclude Include="NurseService.h" />
     <ClInclude Include="Patient.h" />

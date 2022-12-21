@@ -138,3 +138,31 @@ vector<Appointment> AppointmentService::GetAllAppointment() {
 	}
 	return *new vector<Appointment>();
 };
+
+void AppointmentService::AppointmentComplete(int appointmentId) {
+
+	conn = mysql_init(0);
+	stringstream a;
+	a << "UPDATE appointments SET isCompleted = true WHERE id = " << appointmentId;
+	string b = a.str();
+	const char* query = b.c_str();
+
+
+	if (conn = mysql_real_connect(conn, "localhost", "root", "musti123", "hospitalmanagmentdb", 3306, NULL, 0))
+	{
+
+		if (!(mysql_query(conn, query)))
+		{
+			cout << "Güncelleme islemi tamam";
+		}
+		else
+		{
+			cout << "Güncelleme islemi basarisiz";
+		}
+	}
+	else
+	{
+		cout << "sql baglanmadi" << endl;
+
+	}
+};

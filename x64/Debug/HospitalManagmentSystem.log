@@ -1,8 +1,8 @@
 ﻿  HospitalManagmentSystem.cpp
-C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(85,9): warning C4101: 'id': unreferenced local variable
-C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(254,9): warning C4101: 'id': unreferenced local variable
-C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(415,9): warning C4101: 'id': unreferenced local variable
-C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(579,9): warning C4101: 'id': unreferenced local variable
-C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(755,9): warning C4101: 'id': unreferenced local variable
-C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(940,8): warning C4101: 'id': unreferenced local variable
+C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(86,9): warning C4101: 'id': unreferenced local variable
+C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(255,9): warning C4101: 'id': unreferenced local variable
+C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(416,9): warning C4101: 'id': unreferenced local variable
+C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(580,9): warning C4101: 'id': unreferenced local variable
+C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(756,9): warning C4101: 'id': unreferenced local variable
+C:\Users\musti\Desktop\Project\HospitalManagmentSystem\HospitalManagmentSystem.cpp(941,8): warning C4101: 'id': unreferenced local variable
   HospitalManagmentSystem.vcxproj -> C:\Users\musti\Desktop\Project\HospitalManagmentSystem\x64\Debug\HospitalManagmentSystem.exe

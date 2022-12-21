@@ -10,5 +10,6 @@ public:
 	void DeleteAppointment(int appointmentId);
 	Appointment GetAppointmentById(int appointmentId);
 	vector<Appointment> GetAllAppointment();
+	void AppointmentComplete(int appointmentId);
 };
 

@@ -69,6 +69,12 @@
     <ClCompile Include="AppointmentService.cpp">
       <Filter>Source Files\Services</Filter>
     </ClCompile>
+    <ClCompile Include="Examination.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="ExaminationService.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Doctor.h">
@@ -108,6 +114,12 @@
       <Filter>Header Files\IEntities</Filter>
     </ClInclude>
     <ClInclude Include="AppointmentService.h">
+      <Filter>Header Files\IServices</Filter>
+    </ClInclude>
+    <ClInclude Include="Examination.h">
+      <Filter>Header Files\IEntities</Filter>
+    </ClInclude>
+    <ClInclude Include="ExaminationService.h">
       <Filter>Header Files\IServices</Filter>
     </ClInclude>
   </ItemGroup>
